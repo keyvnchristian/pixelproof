@@ -1,5 +1,10 @@
 # Changelog
 
+## Unreleased
+- **`enhance looks`:** a user-supplied reference is now the primary style source (measured and sliced like `replicate`), not just the built-in presets — presets are a fallback library for when there's no reference. Handles two-image prompts ("enhance this, make it look like this") by asking which of style/layout/content/all is in scope when it isn't stated.
+- **`measure.md` / `enhance` verify step:** hard scale-sanity gate — a body font-size or control-height outside plausible px ranges after scale detection flags the scale as off by 2x/3x before it propagates into a "zoomed in" restyle.
+- **Fix:** normalized bare `scripts/...`/`assets/...` paths and a lowercase `<skill>/...` placeholder in `references/*.md` to `<SKILL_DIR>/...`, matching the convention every command file already follows.
+
 ## 0.4.1 — 2026-09-17
 - **`audit`:** chat reply is now three Markdown tables (category scores, top findings, strengths) instead of prose lines. Findings sorted Critical → High → Medium → Low.
 
