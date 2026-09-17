@@ -1,6 +1,6 @@
 {
   "name": "pixelproof",
-  "version": "0.4.1",
+  "version": "0.4.2",
   "description": "Pixel-exact UI from design references, plus design audits and roasts: an agent skill that measures screenshots, slices them into HTML+CSS, implements them with approval gates, and checks consistency.",
   "type": "module",
   "bin": {
