@@ -1,0 +1,17 @@
+{
+  "name": "pixelproof",
+  "owner": {
+    "name": "Kevin Christian",
+    "url": "https://github.com/keyvnchristian"
+  },
+  "description": "Pixelproof: pixel-exact UI from design references.",
+  "plugins": [
+    {
+      "name": "pixelproof",
+      "source": "./",
+      "description": "Measure design references, slice them into HTML+CSS, and implement them exactly with approval gates and parity checks.",
+      "category": "design",
+      "tags": ["design", "ui", "pixel-perfect"]
+    }
+  ]
+}

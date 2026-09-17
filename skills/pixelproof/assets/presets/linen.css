@@ -1,0 +1,57 @@
+/* Linen — warm editorial. Generous rounding, black pill actions, big numerals, saffron only for highlights. */
+[data-preset="linen"] {
+  --font: "Instrument Sans", "Hanken Grotesk", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-display: var(--font);
+  --display-weight: 500;
+  --display-tracking: -0.035em;
+  --title-weight: 500;
+
+  --canvas: #eceae4;
+  --surface: #f8f7f3;
+  --surface-2: #f2f0ea;
+  --surface-3: #e8e5dc;
+  --line: #dedbd2;
+  --line-strong: #cdc9bd;
+  --ink: #1c1b18;
+  --ink-2: #3d3b35;
+  --ink-3: #66635a;
+  --ink-4: #a5a198;
+
+  --accent: #f0a500;
+  --accent-hover: #d99500;
+  --accent-soft: #fbefd2;
+  --accent-ink: #8a5d00;
+  --on-accent: #1c1b18;
+  --btn-solid: #1c1b18;
+  --btn-solid-hover: #34322c;
+  --on-btn-solid: #f8f7f3;
+  --accent-gradient: linear-gradient(135deg, #2a2823 0%, #1c1b18 100%);
+
+  --success: #2f6a12; --success-soft: #e4f2c9;
+  --warning: #8a5d00; --warning-soft: #fbefd2;
+  --danger: #b23a22;  --danger-soft: #f8e1da;
+  --info: #3a5a8c;    --info-soft: #e1e8f2;
+
+  --r-panel: 26px;
+  --r-card: 20px;
+  --r-control: 999px;
+  --r-chip: 999px;
+  --shadow-panel: none;
+  --shadow-float: 0 18px 40px -18px rgba(28, 27, 24, 0.28);
+  --shadow-accent: 0 10px 24px -12px rgba(28, 27, 24, 0.6);
+
+  --row-h: 56px;
+  --control-h: 42px;
+  --gap: 16px;
+  --pad: 22px;
+
+  --brand-mark-ink: var(--accent);
+  --nav-active-bg: var(--ink);
+  --nav-active-ink: var(--surface);
+  --nav-active-shadow: none;
+  --stat-size: 44px;
+  --stat-weight: 500;
+  --bar-fill: var(--ink);
+  --cta-btn-bg: var(--accent);
+  --cta-btn-ink: var(--ink);
+}

@@ -1,0 +1,18 @@
+{
+  "project": "Pixelproof presets",
+  "font_href": "https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Instrument+Sans:wght@400;500;600;700&display=swap",
+  "lang": "en",
+  "css": ["../components.css", "../lumen.css", "../linen.css", "../nocturne.css"],
+  "sprite": "../../icons/starter-sprite.svg",
+  "presets": ["lumen", "linen", "nocturne"],
+  "out": "build",
+  "screens": [
+    { "name": "dashboard", "title": "Dashboard", "body": "dashboard.body.html", "shows": "App shell, stat cards, table panel, summary and plan cards, chart" },
+    { "name": "settings", "title": "Settings", "body": "settings.body.html", "shows": "Settings dialog with segmented scope, side nav, filterable table" },
+    { "name": "form", "title": "Form", "body": "form.body.html", "shows": "Two-column form rows, checkboxes, tags, error state" },
+    { "name": "auth", "title": "Log in", "body": "auth.body.html", "shows": "Split login with SSO, password, remember-me, brand panel" },
+    { "name": "auth-states", "title": "Auth states", "body": "auth-states.body.html", "shows": "OTP, reset password with error, register with success" },
+    { "name": "upload", "title": "Files", "body": "upload.body.html", "shows": "Dropzone, file rows (done, progress, error, queued), thumbnails, empty state" },
+    { "name": "landing", "title": "Landing", "body": "landing.body.html", "shows": "Nav, hero with product shot, logos, bento, steps, testimonial, pricing, FAQ, CTA, footer" }
+  ]
+}

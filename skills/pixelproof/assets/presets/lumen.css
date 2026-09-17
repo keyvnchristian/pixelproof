@@ -1,0 +1,57 @@
+/* Lumen — light product UI. Floating panels on a cool canvas; violet only for primary action, selection, and counts. */
+[data-preset="lumen"] {
+  --font: "Geist", "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-display: var(--font);
+  --display-weight: 600;
+  --display-tracking: -0.03em;
+  --title-weight: 600;
+
+  --canvas: #f2f2f5;
+  --surface: #ffffff;
+  --surface-2: #f8f8fa;
+  --surface-3: #f0eff4;
+  --line: #e7e6ec;
+  --line-strong: #d9d8e0;
+  --ink: #16151f;
+  --ink-2: #3f3e4b;
+  --ink-3: #6b6a78;
+  --ink-4: #9f9eab;
+
+  --accent: #6e56f8;
+  --accent-hover: #5b43ea;
+  --accent-soft: #efecfe;
+  --accent-ink: #4a33d6;
+  --on-accent: #ffffff;
+  --btn-solid: var(--accent);
+  --btn-solid-hover: var(--accent-hover);
+  --on-btn-solid: #ffffff;
+  --accent-gradient: linear-gradient(135deg, #8b78ff 0%, #6e56f8 55%, #5a41e8 100%);
+
+  --success: #127a4a; --success-soft: #e3f5ec;
+  --warning: #a2570b; --warning-soft: #fdf0dc;
+  --danger: #c4312b;  --danger-soft: #fdeceb;
+  --info: #2459c7;    --info-soft: #e7eefc;
+
+  --r-panel: 16px;
+  --r-card: 12px;
+  --r-control: 10px;
+  --r-chip: 6px;
+  --shadow-panel: 0 1px 2px rgba(22, 21, 31, 0.04);
+  --shadow-float: 0 12px 32px -12px rgba(22, 21, 31, 0.18);
+  --shadow-accent: 0 8px 20px -8px rgba(110, 86, 248, 0.55);
+
+  --row-h: 46px;
+  --control-h: 38px;
+  --gap: 12px;
+  --pad: 16px;
+
+  --brand-mark-ink: #ffffff;
+  --nav-active-bg: var(--surface);
+  --nav-active-ink: var(--ink);
+  --nav-active-shadow: 0 1px 2px rgba(22, 21, 31, 0.05), 0 0 0 1px var(--line);
+  --stat-size: 32px;
+  --stat-weight: 600;
+  --bar-fill: var(--accent);
+  --cta-btn-bg: var(--surface);
+  --cta-btn-ink: var(--ink);
+}

@@ -1,0 +1,50 @@
+<!-- @component: settings-dialog -->
+<div class="dialog" role="dialog" aria-labelledby="dlg-title">
+  <aside class="dialog-side">
+    <p class="nav-label" style="padding-top:0">rani@junipergoods.co</p>
+    <div class="segmented" role="group" aria-label="Settings scope">
+      <button aria-pressed="false">Account</button>
+      <button aria-pressed="true">Workspace</button>
+    </div>
+    <nav>
+      <a href="#" class="nav-item"><svg class="icon"><use href="#i-trending-up"/></svg>Usage</a>
+      <a href="#" class="nav-item"><svg class="icon"><use href="#i-building"/></svg>Workspace details</a>
+      <a href="#" class="nav-item"><svg class="icon"><use href="#i-shield-check"/></svg>Security</a>
+      <a href="#" class="nav-item"><svg class="icon"><use href="#i-user"/></svg>Members</a>
+      <a href="#" class="nav-item is-active"><svg class="icon"><use href="#i-users"/></svg>Teams</a>
+      <a href="#" class="nav-item"><svg class="icon"><use href="#i-lock"/></svg>Roles</a>
+      <a href="#" class="nav-item"><svg class="icon"><use href="#i-grid"/></svg>Integrations</a>
+    </nav>
+  </aside>
+  <section class="dialog-main">
+    <header class="dialog-head">
+      <div><h2 class="page-title" id="dlg-title" style="font-size:20px">Teams</h2><p class="page-sub">Group people so you can share access in one step.</p></div>
+      <button class="btn btn-ghost btn-icon" aria-label="Close settings"><svg class="icon"><use href="#i-x"/></svg></button>
+    </header>
+    <div class="dialog-body">
+      <div class="toolbar">
+        <label class="input-group"><svg class="icon icon-sm"><use href="#i-search"/></svg><input class="input" type="search" placeholder="Search teams" aria-label="Search teams" /></label>
+        <select class="select" style="width:auto" aria-label="Filter by access"><option>Access: All</option><option>Owner</option><option>Editor</option><option>Viewer</option></select>
+      </div>
+      <div class="panel">
+        <div class="table-wrap">
+          <table class="table">
+            <thead><tr><th>Team</th><th>Status</th><th>Access</th><th>Members</th><th></th></tr></thead>
+            <tbody>
+              <tr><td class="strong">Operations</td><td><span class="chip chip-success"><i class="dot"></i>Active</span></td><td><span class="chip chip-outline">Owner</span></td><td><div class="cell"><div class="avatar-stack"><span class="avatar avatar-sm" style="background:#6b5b95">DS</span><span class="avatar avatar-sm" style="background:#3f7d6e">AK</span><span class="avatar avatar-sm" style="background:#a0664b">RL</span></div><span class="muted">6 members</span></div></td><td class="end"><button class="row-link" aria-label="Team options"><svg class="icon icon-sm"><use href="#i-dots"/></svg></button></td></tr>
+              <tr><td class="strong">Finance</td><td><span class="chip chip-success"><i class="dot"></i>Active</span></td><td><span class="chip chip-outline">Editor</span></td><td><div class="cell"><div class="avatar-stack"><span class="avatar avatar-sm" style="background:#2f5d8a">NW</span><span class="avatar avatar-sm" style="background:#7a6a3b">TP</span></div><span class="muted">3 members</span></div></td><td class="end"><button class="row-link" aria-label="Team options"><svg class="icon icon-sm"><use href="#i-dots"/></svg></button></td></tr>
+              <tr><td class="strong">Customer care</td><td><span class="chip chip-success"><i class="dot"></i>Active</span></td><td><span class="chip chip-outline">Editor</span></td><td><div class="cell"><div class="avatar-stack"><span class="avatar avatar-sm" style="background:#8a4a6b">MY</span><span class="avatar avatar-sm" style="background:#4a6b8a">HB</span><span class="avatar avatar-sm" style="background:#4a7a3b">IS</span></div><span class="muted">14 members</span></div></td><td class="end"><button class="row-link" aria-label="Team options"><svg class="icon icon-sm"><use href="#i-dots"/></svg></button></td></tr>
+              <tr><td class="strong">Warehouse</td><td><span class="chip chip-warning"><i class="dot"></i>Invite pending</span></td><td><span class="chip chip-outline">Viewer</span></td><td><div class="cell"><div class="avatar-stack"><span class="avatar avatar-sm" style="background:#6b6b6b">GF</span></div><span class="muted">1 member</span></div></td><td class="end"><button class="row-link" aria-label="Team options"><svg class="icon icon-sm"><use href="#i-dots"/></svg></button></td></tr>
+              <tr><td class="strong">Contractors</td><td><span class="chip"><i class="dot"></i>Paused</span></td><td><span class="chip chip-outline">Viewer</span></td><td><div class="cell"><span class="muted">No members</span></div></td><td class="end"><button class="row-link" aria-label="Team options"><svg class="icon icon-sm"><use href="#i-dots"/></svg></button></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    <footer class="dialog-foot">
+      <button class="btn btn-line">Cancel</button>
+      <button class="btn btn-solid"><svg class="icon icon-sm"><use href="#i-plus"/></svg>Create team</button>
+    </footer>
+  </section>
+</div>
+<!-- @end -->

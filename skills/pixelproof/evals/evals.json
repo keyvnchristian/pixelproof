@@ -1,0 +1,23 @@
+{
+  "skill_name": "pixelproof",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Here's a Dribbble shot of an admin orders page (refs/list.png). Build this page in my Next.js + Tailwind app exactly like the shot — same paddings, borders, table style and icons — but use our brand color #992c29 instead of the blue.",
+      "expected_output": "Runs intake with one question round (asks about additions), measures the image with scale detection, produces a slice (shared.css, sprite.svg, list.html) with crimson primary, renders previews at 1440/1024/390 plus a compare image, and stops at GATE B asking Approve / Request changes / Implement directly before touching the app.",
+      "files": ["refs/list.png"]
+    },
+    {
+      "id": 2,
+      "prompt": "Restyle my existing logistics admin to look exactly like these two screenshots (refs/list.png for tables, refs/dashboard.png for the overview). Keep all my pages, columns and actions. Also add a 'Soon' state for Settings and Help in the sidebar.",
+      "expected_output": "Treats it as a restyle: element inventory of existing pages, slices both references with demo-content labeled as such, builds the requested additions from existing tokens in an additions slice (GATE C), produces style-spec.md + tokens.json + plan.md with an element mapping table, and stops at each gate for approval. Never copies reference demo content into the app.",
+      "files": ["refs/list.png", "refs/dashboard.png"]
+    },
+    {
+      "id": 3,
+      "prompt": "I keep throwing UI screenshots at you and the result never matches — spacing and icons are always off. Take this design.md plus the screenshot and implement the sidebar and topbar exactly, then show me before you continue with the rest.",
+      "expected_output": "Uses design.md values as authoritative measurements, still slices and renders them for proof, shows the preview and waits at the gate, and after approval implements only the approved batch with parity and token checks, reporting results at GATE E.",
+      "files": ["refs/design.md", "refs/shell.png"]
+    }
+  ]
+}

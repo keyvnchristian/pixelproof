@@ -1,0 +1,10 @@
+{
+  "project": "Acme Admin",
+  "font_href": "https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap",
+  "lang": "en",
+  "screens": [
+    { "name": "list", "title": "List page", "body": "list.body.html", "shows": "Sidebar, topbar, status tabs, filters, grouped table" },
+    { "name": "dashboard", "title": "Overview page", "body": "dashboard.body.html", "shows": "Summary cards, chart panel, data table" },
+    { "name": "additions", "title": "Additions", "body": "additions.body.html", "shows": "Elements the references don't show, built from the same tokens" }
+  ]
+}

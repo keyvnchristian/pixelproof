@@ -1,0 +1,40 @@
+<div class="state-grid">
+  <!-- @component: otp-card -->
+  <section class="card">
+    <span class="tile tile-accent"><svg class="icon"><use href="#i-mail"/></svg></span>
+    <h2 class="state-title">Check your email</h2>
+    <p class="muted">We sent a 6-digit code to rani@junipergoods.co. It expires in 10 minutes.</p>
+    <div class="otp" style="margin:20px 0">
+      <input class="input" value="4" aria-label="Digit 1" /><input class="input" value="8" aria-label="Digit 2" /><input class="input" value="1" aria-label="Digit 3" /><input class="input" aria-label="Digit 4" /><input class="input" aria-label="Digit 5" /><input class="input" aria-label="Digit 6" />
+    </div>
+    <button class="btn btn-solid btn-block">Verify code</button>
+    <p class="auth-foot" style="margin-top:14px">Didn't get it? <a href="#" class="link">Send a new code</a></p>
+  </section>
+  <!-- @end -->
+
+  <!-- @component: reset-card -->
+  <section class="card">
+    <span class="tile tile-accent"><svg class="icon"><use href="#i-key"/></svg></span>
+    <h2 class="state-title">Reset your password</h2>
+    <p class="muted">Enter the email you log in with. We'll send a reset link.</p>
+    <div class="alert alert-danger" style="margin-top:16px"><svg class="icon icon-sm"><use href="#i-info"/></svg><span>No account uses rani@junipergods.co. Check the spelling or create a store.</span></div>
+    <label class="field" style="margin:14px 0"><span class="label">Email</span><input class="input is-error" value="rani@junipergods.co" /></label>
+    <button class="btn btn-solid btn-block">Send reset link</button>
+  </section>
+  <!-- @end -->
+
+  <!-- @component: register-card -->
+  <section class="card">
+    <span class="tile tile-accent"><svg class="icon"><use href="#i-store"/></svg></span>
+    <h2 class="state-title">Create your store</h2>
+    <p class="muted">Free for your first 50 orders.</p>
+    <form style="display:grid;gap:12px;margin-top:16px">
+      <div class="grid grid-2" style="gap:10px"><label class="field"><span class="label">First name</span><input class="input" value="Rani" /></label><label class="field"><span class="label">Last name</span><input class="input" value="Aditya" /></label></div>
+      <label class="field"><span class="label">Store name</span><input class="input" placeholder="Juniper Goods" /></label>
+      <label class="field"><span class="label">Password</span><input class="input" type="password" value="longpassword" /><span class="hint">At least 12 characters.</span></label>
+      <div class="alert alert-success"><svg class="icon icon-sm"><use href="#i-check"/></svg><span>Store name is available.</span></div>
+      <button class="btn btn-solid btn-block">Create store</button>
+    </form>
+  </section>
+  <!-- @end -->
+</div>

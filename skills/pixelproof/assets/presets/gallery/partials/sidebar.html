@@ -1,0 +1,34 @@
+<!-- @component: sidebar -->
+<aside class="side" aria-label="Main navigation">
+  <div class="side-brand">
+    <span class="brand-mark"><svg class="icon"><use href="#i-logo"/></svg></span>
+    <div><small>Pixelproof</small><strong>Juniper Goods</strong></div>
+  </div>
+  <label class="input-group">
+    <svg class="icon icon-sm"><use href="#i-search"/></svg>
+    <input class="input" type="search" placeholder="Search" aria-label="Search" />
+    <span class="kbd">⌘K</span>
+  </label>
+  <a href="#" class="nav-item"><svg class="icon"><use href="#i-bell"/></svg>Notifications<span class="badge">3</span></a>
+
+  <p class="nav-label">Store</p>
+  <a href="#" class="nav-item{{#active=home}} is-active{{/active}}"><svg class="icon"><use href="#i-home"/></svg>Home</a>
+  <a href="#" class="nav-item{{#active=orders}} is-active{{/active}}"><svg class="icon"><use href="#i-cart"/></svg>Orders<span class="badge">12</span></a>
+  <a href="#" class="nav-item"><svg class="icon"><use href="#i-package"/></svg>Products</a>
+  <a href="#" class="nav-item"><svg class="icon"><use href="#i-users"/></svg>Customers</a>
+
+  <p class="nav-label">Money</p>
+  <a href="#" class="nav-item{{#active=payouts}} is-active{{/active}}"><svg class="icon"><use href="#i-wallet"/></svg>Payouts</a>
+  <a href="#" class="nav-item"><svg class="icon"><use href="#i-trending-up"/></svg>Reports</a>
+  <a href="#" class="nav-item{{#active=files}} is-active{{/active}}"><svg class="icon"><use href="#i-folder"/></svg>Files</a>
+
+  <p class="nav-label">Workspace</p>
+  <a href="#" class="nav-item{{#active=listing}} is-active{{/active}}"><svg class="icon"><use href="#i-clipboard"/></svg>Listings</a>
+  <a href="#" class="nav-item{{#active=settings}} is-active{{/active}}"><svg class="icon"><use href="#i-settings"/></svg>Settings</a>
+
+  <div class="side-user">
+    <span class="avatar" style="background:#8a6a55">RA</span>
+    <div><strong>Rani Aditya</strong><span>rani@junipergoods.co</span></div>
+  </div>
+</aside>
+<!-- @end -->

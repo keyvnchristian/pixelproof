@@ -1,0 +1,62 @@
+<div class="shell">
+  <!-- include: partials/sidebar.html {{active:listing}} -->
+  <main class="main">
+    <div class="topbar">
+      <div class="cell"><h1 class="page-title" style="font-size:22px">Linen tote, natural</h1><span class="chip chip-success"><i class="dot"></i>Live</span></div>
+      <div class="actions">
+        <button class="btn btn-ghost btn-sm">Discard changes</button>
+        <button class="btn btn-soft btn-sm"><svg class="icon icon-sm"><use href="#i-file"/></svg>Save draft</button>
+        <button class="btn btn-solid btn-sm"><svg class="icon icon-sm"><use href="#i-check"/></svg>Publish changes</button>
+      </div>
+    </div>
+
+    <!-- @component: form-section -->
+    <section style="margin-top:26px">
+      <h2 class="panel-title">Listing details</h2>
+      <p class="panel-sub">Shoppers see everything on this page.</p>
+
+      <div class="form-row" style="margin-top:14px">
+        <div><h3>Product name</h3><p>Keep it short. Shoppers scan names in search results.</p></div>
+        <div class="form-control">
+          <input class="input" value="Linen tote, natural" aria-label="Product name" />
+          <span class="hint">19 of 60 characters</span>
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div><h3>Sold as</h3><p>Pick every format you offer.</p></div>
+        <div class="form-control">
+          <label class="check"><input type="checkbox" checked /> Single item</label>
+          <label class="check"><input type="checkbox" checked /> Bundle of 3</label>
+          <label class="check"><input type="checkbox" /> Wholesale case</label>
+          <label class="check"><input type="checkbox" /> Made to order</label>
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div><h3>Ships from</h3><p>Used to estimate delivery times at checkout.</p></div>
+        <div class="form-control">
+          <label class="input-group"><svg class="icon icon-sm"><use href="#i-map-pin"/></svg><input class="input" value="Bandung" aria-label="City" /></label>
+          <select class="select" aria-label="Country"><option>Indonesia</option><option>Singapore</option><option>Malaysia</option></select>
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div><h3>Collections</h3><p>Choose up to 5. Collections decide where the product appears in your store.</p></div>
+        <div class="form-control">
+          <div class="tags"><span class="chip chip-accent">Bags</span><span class="chip chip-accent">Everyday carry</span><span class="chip chip-accent">Natural fibres</span></div>
+          <label class="input-group"><svg class="icon icon-sm"><use href="#i-search"/></svg><input class="input" placeholder="Search collections" aria-label="Search collections" /></label>
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div><h3>Price</h3><p>Before tax. You can add discounts later.</p></div>
+        <div class="form-control">
+          <input class="input is-error" value="0" aria-label="Price" aria-describedby="price-error" />
+          <span class="error-text" id="price-error">Enter a price above 0 to publish this listing.</span>
+        </div>
+      </div>
+    </section>
+    <!-- @end -->
+  </main>
+</div>

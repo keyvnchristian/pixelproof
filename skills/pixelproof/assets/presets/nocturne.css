@@ -1,0 +1,59 @@
+/* Nocturne — dark indigo marketing. Deep gradient canvas, glassy surfaces, violet actions. Pairs with Lumen product screens. */
+[data-preset="nocturne"] {
+  --font: "Geist", "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-display: var(--font);
+  --display-weight: 500;
+  --display-tracking: -0.035em;
+  --title-weight: 500;
+
+  --canvas: #100e2e;
+  --surface: #1b1946;
+  --surface-2: #211e52;
+  --surface-3: #2a2762;
+  --line: rgba(236, 234, 255, 0.1);
+  --line-strong: rgba(236, 234, 255, 0.18);
+  --ink: #f3f2ff;
+  --ink-2: #d6d4f5;
+  --ink-3: #a4a1d4;
+  --ink-4: #7b78ad;
+
+  --accent: #6450f2;
+  --accent-hover: #5641e6;
+  --accent-soft: rgba(124, 107, 255, 0.18);
+  --accent-ink: #c9c1ff;
+  --on-accent: #ffffff;
+  --btn-solid: var(--accent);
+  --btn-solid-hover: var(--accent-hover);
+  --on-btn-solid: #ffffff;
+  --accent-gradient: linear-gradient(135deg, #6f5cf7 0%, #4d3bd8 100%);
+  --hero-gradient: radial-gradient(90% 55% at 50% 58%, rgba(92, 82, 255, 0.55) 0%, rgba(92, 82, 255, 0) 70%), linear-gradient(180deg, #100e2e 0%, #17145a 45%, #2a26a6 72%, #100e2e 100%);
+
+  --success: #5ee0a0; --success-soft: rgba(94, 224, 160, 0.14);
+  --warning: #ffc36b; --warning-soft: rgba(255, 195, 107, 0.14);
+  --danger: #ff8a80;  --danger-soft: rgba(255, 138, 128, 0.14);
+  --info: #8fb6ff;    --info-soft: rgba(143, 182, 255, 0.14);
+
+  --r-panel: 18px;
+  --r-card: 14px;
+  --r-control: 10px;
+  --r-chip: 6px;
+  --shadow-panel: 0 1px 0 rgba(255, 255, 255, 0.04) inset;
+  --shadow-float: 0 30px 60px -30px rgba(0, 0, 0, 0.7);
+  --shadow-accent: 0 10px 28px -10px rgba(124, 107, 255, 0.8);
+
+  --row-h: 46px;
+  --control-h: 38px;
+  --gap: 12px;
+  --pad: 18px;
+
+  --brand-mark-ink: #ffffff;
+  --nav-active-bg: var(--surface-3);
+  --nav-active-ink: var(--ink);
+  --nav-active-shadow: 0 0 0 1px var(--line-strong);
+  --stat-size: 32px;
+  --stat-weight: 600;
+  --bar-fill: var(--accent);
+  --cta-btn-bg: #ffffff;
+  --site-bg: var(--hero-gradient) top / 100% 1500px no-repeat, var(--canvas);
+  --cta-btn-ink: #16151f;
+}

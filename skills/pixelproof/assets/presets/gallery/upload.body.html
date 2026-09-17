@@ -1,0 +1,69 @@
+<div class="shell">
+  <!-- include: partials/sidebar.html {{active:files}} -->
+  <main class="main">
+    <div class="topbar">
+      <nav class="crumbs" aria-label="Breadcrumb"><svg class="icon icon-sm"><use href="#i-home"/></svg><span>Money</span><svg class="icon icon-sm"><use href="#i-chev-right"/></svg><span class="current">Files</span></nav>
+      <button class="btn btn-line btn-sm"><svg class="icon icon-sm"><use href="#i-folder"/></svg>New folder</button>
+    </div>
+    <div class="page-head"><div><h1 class="page-title">Files</h1><p class="page-sub">Invoices, tax forms and product photos, all in one place.</p></div></div>
+
+    <div class="split">
+      <!-- @component: upload-panel -->
+      <section class="panel">
+        <div class="panel-head"><div><h2 class="panel-title">Upload documents</h2><p class="panel-sub">PDF, JPG, PNG, DOCX or CSV, up to 25 MB each</p></div></div>
+        <div class="panel-body">
+          <label class="dropzone">
+            <input type="file" class="sr-only" multiple />
+            <span class="tile"><svg class="icon"><use href="#i-upload"/></svg></span>
+            <strong><span>Click to upload</span> or drag files here</strong>
+            <span class="hint">Files upload one at a time and keep going if you leave this page.</span>
+          </label>
+          <div class="files">
+            <div class="file">
+              <span class="file-type ft-pdf">PDF</span>
+              <div><p class="file-name">tax-invoice-september.pdf</p><p class="file-meta">2.4 MB · Uploaded just now</p></div>
+              <span class="chip chip-success"><svg class="icon icon-sm"><use href="#i-check"/></svg>Done</span>
+            </div>
+            <div class="file">
+              <span class="file-type ft-img">JPG</span>
+              <div><p class="file-name">tote-natural-front.jpg</p><p class="file-meta">6.1 of 8.4 MB · about 20 seconds left</p><div class="progress" role="progressbar" aria-valuenow="72" aria-valuemin="0" aria-valuemax="100"><i style="width:72%"></i></div></div>
+              <button class="btn btn-ghost btn-sm btn-icon" aria-label="Cancel upload"><svg class="icon icon-sm"><use href="#i-x"/></svg></button>
+            </div>
+            <div class="file is-error">
+              <span class="file-type ft-doc">DOC</span>
+              <div><p class="file-name">supplier-agreement-2026.docx</p><p class="file-meta">31 MB is over the 25 MB limit. Compress it or upload a PDF.</p></div>
+              <button class="btn btn-line btn-sm"><svg class="icon icon-sm"><use href="#i-refresh"/></svg>Retry</button>
+            </div>
+            <div class="file">
+              <span class="file-type ft-csv">CSV</span>
+              <div><p class="file-name">stock-count-week-38.csv</p><p class="file-meta">Waiting to upload</p><div class="progress"><i style="width:0%"></i></div></div>
+              <button class="btn btn-ghost btn-sm btn-icon" aria-label="Remove file"><svg class="icon icon-sm"><use href="#i-trash"/></svg></button>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- @end -->
+
+      <!-- @component: file-grid -->
+      <section class="panel">
+        <div class="panel-head"><h2 class="panel-title">Recent</h2><a href="#" class="link">See all</a></div>
+        <div class="panel-body thumbs" style="grid-template-columns:repeat(2,minmax(0,1fr))">
+          <figure class="thumb"><div class="thumb-art a1"><svg class="icon icon-lg"><use href="#i-image"/></svg></div><figcaption class="thumb-cap">tote-front.jpg<small>8.4 MB</small></figcaption></figure>
+          <figure class="thumb"><div class="thumb-art a2"><svg class="icon icon-lg"><use href="#i-image"/></svg></div><figcaption class="thumb-cap">tote-detail.jpg<small>5.2 MB</small></figcaption></figure>
+          <figure class="thumb"><div class="thumb-art"><svg class="icon icon-lg"><use href="#i-file"/></svg></div><figcaption class="thumb-cap">invoice-0913.pdf<small>1.1 MB</small></figcaption></figure>
+          <figure class="thumb"><div class="thumb-art a3"><svg class="icon icon-lg"><use href="#i-image"/></svg></div><figcaption class="thumb-cap">lookbook-cover.png<small>3.7 MB</small></figcaption></figure>
+        </div>
+      </section>
+      <!-- @end -->
+    </div>
+
+    <!-- @component: empty-state -->
+    <section class="card card-soft" style="margin-top:var(--gap);text-align:center;padding:40px">
+      <span class="tile" style="margin:0 auto"><svg class="icon"><use href="#i-folder"/></svg></span>
+      <h2 class="state-title">No shared files yet</h2>
+      <p class="muted">Files you share with your accountant show up here.</p>
+      <button class="btn btn-line" style="margin-top:16px">Share a file</button>
+    </section>
+    <!-- @end -->
+  </main>
+</div>

@@ -1,0 +1,53 @@
+{
+  "name": "pixelproof",
+  "version": "0.4.0",
+  "description": "Pixel-exact UI from design references, plus design audits and roasts: an agent skill that measures screenshots, slices them into HTML+CSS, implements them with approval gates, and checks consistency.",
+  "type": "module",
+  "bin": {
+    "pixelproof": "cli/pixelproof.mjs"
+  },
+  "files": [
+    "cli/",
+    "skills/",
+    ".claude-plugin/",
+    "README.md",
+    "LICENSE",
+    "CHANGELOG.md"
+  ],
+  "engines": {
+    "node": ">=18"
+  },
+  "keywords": [
+    "accessibility",
+    "agent-skills",
+    "claude-code",
+    "claude-skill",
+    "codex",
+    "design",
+    "design-audit",
+    "design-presets",
+    "design-system",
+    "design-tokens",
+    "pixel-perfect",
+    "refactoring",
+    "responsive",
+    "screenshot-to-code",
+    "ui",
+    "web-performance"
+  ],
+  "author": "Kevin Christian (Arklify)",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/keyvnchristian/pixelproof.git"
+  },
+  "homepage": "https://github.com/keyvnchristian/pixelproof#readme",
+  "bugs": {
+    "url": "https://github.com/keyvnchristian/pixelproof/issues"
+  },
+  "scripts": {
+    "test": "node cli/pixelproof.mjs --help && python3 -c \"import ast,glob;[ast.parse(open(f).read()) for f in glob.glob('skills/pixelproof/scripts/*.py')]\" && node --check skills/pixelproof/scripts/check_parity.mjs && node --check skills/pixelproof/scripts/check_tokens.mjs && node -e \"const fs=require('fs');const s=fs.readFileSync('skills/pixelproof/SKILL.md','utf8');for(const m of s.matchAll(/commands\\/([a-z]+)\\.md/g)){if(!fs.existsSync('skills/pixelproof/commands/'+m[1]+'.md'))throw new Error('missing command file '+m[1])}\"",
+    "prepublishOnly": "npm test",
+    "smoke": "node tools/smoke.mjs"
+  }
+}

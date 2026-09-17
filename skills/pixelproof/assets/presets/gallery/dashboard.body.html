@@ -1,0 +1,118 @@
+<div class="shell">
+  <!-- include: partials/sidebar.html {{active:payouts}} -->
+
+  <main class="main">
+    <!-- @component: topbar -->
+    <div class="topbar">
+      <nav class="crumbs" aria-label="Breadcrumb"><svg class="icon icon-sm"><use href="#i-home"/></svg><span>Money</span><svg class="icon icon-sm"><use href="#i-chev-right"/></svg><span class="current">Payouts</span></nav>
+      <div class="actions">
+        <button class="btn btn-line btn-sm"><svg class="icon icon-sm"><use href="#i-download"/></svg>Export</button>
+        <button class="btn btn-line btn-sm">Payout settings</button>
+      </div>
+    </div>
+    <!-- @end -->
+
+    <!-- @component: page-head -->
+    <div class="page-head">
+      <div>
+        <h1 class="page-title">Payouts</h1>
+        <p class="page-sub">Next payout lands in 3 days. You're paid every Friday.</p>
+      </div>
+      <div class="segmented" role="group" aria-label="Period">
+        <button aria-pressed="false">Daily</button>
+        <button aria-pressed="true">Weekly</button>
+        <button aria-pressed="false">Monthly</button>
+      </div>
+    </div>
+    <!-- @end -->
+
+    <!-- @component: stat-cards -->
+    <section class="grid grid-3">
+      <article class="card">
+        <div class="stat-head"><span class="tile"><svg class="icon icon-sm"><use href="#i-calendar"/></svg></span>Next payout<span class="chip chip-accent">Fri, 25 Sep</span></div>
+        <p class="stat-value">$6,248</p>
+        <p class="stat-foot">From 58 orders this week</p>
+      </article>
+      <article class="card">
+        <div class="stat-head"><span class="tile"><svg class="icon icon-sm"><use href="#i-wallet"/></svg></span>Available balance</div>
+        <p class="stat-value">$7,910</p>
+        <p class="stat-foot">Updated hourly</p>
+      </article>
+      <article class="card">
+        <div class="stat-head"><span class="tile"><svg class="icon icon-sm"><use href="#i-trending-up"/></svg></span>Paid out in September</div>
+        <p class="stat-value">$41,320</p>
+        <p class="stat-foot"><span class="chip chip-success"><svg class="icon icon-sm"><use href="#i-arrow-up"/></svg>9.4%</span>compared with August</p>
+      </article>
+    </section>
+    <!-- @end -->
+
+    <div class="split">
+      <!-- @component: table-panel -->
+      <section class="panel">
+        <div class="panel-head">
+          <div><h2 class="panel-title">Payout history</h2></div>
+          <a href="#" class="link">View statements</a>
+        </div>
+        <div class="table-wrap">
+          <table class="table">
+            <thead><tr><th>Date</th><th>Payout</th><th class="end">Net amount</th><th>Account</th><th>Status</th><th></th></tr></thead>
+            <tbody>
+              <tr><td class="strong">25 Sep 2026</td><td class="muted">PO-3108</td><td class="end strong num">$6,248</td><td class="muted">BCA ••• 4410</td><td><span class="chip chip-warning">Scheduled</span></td><td class="end"><a class="row-link" href="#" aria-label="Open PO-3108"><svg class="icon icon-sm"><use href="#i-chev-right"/></svg></a></td></tr>
+              <tr><td class="strong">18 Sep 2026</td><td class="muted">PO-3094</td><td class="end strong num">$5,730</td><td class="muted">BCA ••• 4410</td><td><span class="chip chip-info">In transit</span></td><td class="end"><a class="row-link" href="#" aria-label="Open PO-3094"><svg class="icon icon-sm"><use href="#i-chev-right"/></svg></a></td></tr>
+              <tr><td class="strong">11 Sep 2026</td><td class="muted">PO-3071</td><td class="end strong num">$6,015</td><td class="muted">BCA ••• 4410</td><td><span class="chip chip-success">Paid</span></td><td class="end"><a class="row-link" href="#" aria-label="Open PO-3071"><svg class="icon icon-sm"><use href="#i-chev-right"/></svg></a></td></tr>
+              <tr><td class="strong">4 Sep 2026</td><td class="muted">PO-3052</td><td class="end strong num">$4,862</td><td class="muted">BCA ••• 4410</td><td><span class="chip chip-success">Paid</span></td><td class="end"><a class="row-link" href="#" aria-label="Open PO-3052"><svg class="icon icon-sm"><use href="#i-chev-right"/></svg></a></td></tr>
+              <tr><td class="strong">28 Aug 2026</td><td class="muted">PO-3036</td><td class="end strong num">$5,407</td><td class="muted">BCA ••• 4410</td><td><span class="chip chip-danger">Returned</span></td><td class="end"><a class="row-link" href="#" aria-label="Open PO-3036"><svg class="icon icon-sm"><use href="#i-chev-right"/></svg></a></td></tr>
+              <tr><td class="strong">21 Aug 2026</td><td class="muted">PO-3019</td><td class="end strong num">$4,998</td><td class="muted">BCA ••• 4410</td><td><span class="chip chip-success">Paid</span></td><td class="end"><a class="row-link" href="#" aria-label="Open PO-3019"><svg class="icon icon-sm"><use href="#i-chev-right"/></svg></a></td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="panel-foot">6 of 38 payouts</div>
+      </section>
+      <!-- @end -->
+
+      <div class="grid">
+        <!-- @component: summary-card -->
+        <section class="panel">
+          <div class="panel-head"><h2 class="panel-title">Next payout</h2><button class="btn btn-ghost btn-sm btn-icon" aria-label="More options"><svg class="icon"><use href="#i-dots"/></svg></button></div>
+          <div class="panel-body">
+            <p class="big-number">$6,248</p>
+            <p class="muted" style="margin-top:6px">Arrives Friday, 25 September</p>
+            <div class="rows">
+              <div class="row"><span>Gross sales</span><b>$6,412</b></div>
+              <div class="row"><span>Platform fee (2%)</span><b class="neg">−$128</b></div>
+              <div class="row"><span>Card fees (58 × $0.63)</span><b class="neg">−$36</b></div>
+            </div>
+            <div class="row" style="margin-bottom:16px"><span style="color:var(--ink);font-weight:600">Net payout</span><b>$6,248</b></div>
+            <button class="btn btn-solid btn-block">View schedule</button>
+          </div>
+        </section>
+        <!-- @end -->
+
+        <!-- @component: plan-card -->
+        <section class="plan-card">
+          <div class="row" style="color:inherit"><strong>Payout account</strong><span class="chip">Default</span></div>
+          <p class="big-number">•••• 4410</p>
+          <div class="plan-meta"><div>Account holder<b>Juniper Goods</b></div><div style="text-align:right">Next payout<b>25 Sep</b></div></div>
+        </section>
+        <!-- @end -->
+      </div>
+    </div>
+
+    <!-- @component: chart-card -->
+    <section class="card" style="margin-top:var(--gap)">
+      <div class="topbar">
+        <div><h2 class="panel-title">Weekly volume</h2><p class="panel-sub">Gross sales and payouts, last 6 weeks</p></div>
+        <div class="legend"><span><i class="dot" style="color:var(--surface-3)"></i>Gross</span><span><i class="dot" style="color:var(--accent)"></i>Paid out</span></div>
+      </div>
+      <div class="bars">
+        <div class="bar"><i style="height:30%"></i><i style="height:42%"></i><span>W34</span></div>
+        <div class="bar"><i style="height:22%"></i><i style="height:48%"></i><span>W35</span></div>
+        <div class="bar"><i style="height:34%"></i><i style="height:38%"></i><span>W36</span></div>
+        <div class="bar"><i style="height:18%"></i><i style="height:52%"></i><span>W37</span></div>
+        <div class="bar"><i style="height:26%"></i><i style="height:47%"></i><span>W38</span></div>
+        <div class="bar"><i style="height:24%"></i><i style="height:55%"></i><span>W39</span></div>
+      </div>
+    </section>
+    <!-- @end -->
+  </main>
+</div>
