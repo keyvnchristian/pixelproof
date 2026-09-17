@@ -67,7 +67,7 @@ Run these inside Claude Code. The plugin install uses the prefix `/pixelproof:pi
 | `/pixelproof extract [--url]` | Reverse-engineer your current UI into slices, tokens, and a style spec | No |
 | `/pixelproof add "<what>"` | Add a page, section, or menu in the established style | After your approval |
 | `/pixelproof theme "<change>"` | Rebrand globally: color, font, radius, density (tokens only) | After your approval |
-| `/pixelproof audit [path]` | Design-consistency audit with scores, evidence, and an HTML report | No (offers fixes) |
+| `/pixelproof audit [path]` | Design-consistency audit: scored tables (category scores, findings by severity, strengths), evidence, and an HTML report | No (offers fixes) |
 | `/pixelproof roast [url\|path]` | Brutally honest, funny critique with slop bingo and a Slop Score (`--spicy` optional) | No (offers fixes) |
 | `/pixelproof compare <ref> <url>` | Quick drift check of one page against one reference | No |
 | `/pixelproof verify [page\|all]` | Parity, token, overflow, and icon checks | No |

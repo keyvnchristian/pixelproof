@@ -1,5 +1,8 @@
 # Changelog
 
+## 0.4.1 — 2026-09-17
+- **`audit`:** chat reply is now three Markdown tables (category scores, top findings, strengths) instead of prose lines. Findings sorted Critical → High → Medium → Low.
+
 ## 0.4.0 — 2026-09-17
 - **New `/pixelproof enhance`** for projects without references:
   - `looks`: restyle with a built-in preset

@@ -2,7 +2,7 @@
   "name": "pixelproof",
   "displayName": "Pixelproof",
   "description": "Pixel-exact UI from design references, built-in style presets, and design, performance, and structure audits. Commands: teach, replicate, enhance, extract, add, theme, audit, roast, compare, verify, responsive, status, help.",
-  "version": "0.4.0",
+  "version": "0.4.1",
   "author": {
     "name": "Kevin Christian",
     "url": "https://github.com/keyvnchristian"

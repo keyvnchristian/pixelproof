@@ -80,11 +80,11 @@ python <SKILL_DIR>/scripts/report.py docs/pixelproof/audit/report.json --out doc
  "next": ["/pixelproof extract", "/pixelproof theme"]}
 ```
 
-In chat, reply with:
-- the overall score and the category scores (one line each)
-- the top 5 findings, with evidence and fixes
-- 2–3 real strengths
-- report paths
+In chat, reply with Markdown tables:
+- **Category scores** table: `Category | Score` (mark any skipped category as "skipped" with the reason instead of a number)
+- **Top findings** table: `# | Severity | Finding | Evidence` (put the fix in the finding text or a `Fix` column if there's room), sorted Critical → High → Medium → Low
+- **Strengths** table: `Item | Note`
+- report paths, as a plain list below the tables
 
 ### 8. Offer fixes (approval gate)
 Group the fixes into batches, e.g.:
