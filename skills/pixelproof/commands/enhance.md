@@ -1,20 +1,24 @@
-# /pixelproof enhance — improve a frontend without a reference
+# /pixelproof enhance — improve an existing frontend's style, speed, or structure
 
-For projects without design references. It has three modes and can run one or all:
+For an existing app you want to elevate, not rebuild. It has three modes and can run one or all:
 
 | Mode | Changes | Proof |
 |---|---|---|
-| `looks` | Visual style, using a built-in preset (or the project's own spec) | Before/after previews, then parity with the preset references |
+| `looks` | Borders, weight, radii, font-size scale, spacing/layout density, and overall visual style — from a reference if the user gave one, otherwise from a built-in preset | Before/after previews, then parity with the style source |
 | `perf` | Loading and runtime speed | Before/after LCP, CLS, TBT, and transfer size per page |
 | `structure` | Oversized ("god") components → hooks and subcomponents | Screenshots must be pixel-identical before and after |
 
 Usage:
 - `/pixelproof enhance`: quick triage, then recommends a mode
-- `/pixelproof enhance looks [--preset lumen|linen|nocturne] [--pages …]`
+- `/pixelproof enhance looks [refs…] [--preset lumen|linen|nocturne] [--pages …]`
 - `/pixelproof enhance perf [--url http://localhost:3000] [--pages /,/orders]`
 - `/pixelproof enhance structure [path]`
 
 All three modes keep features, content, routes, data, and behavior unchanged, and every change goes through a preview and approval.
+
+**`enhance looks` vs `replicate`:** both can take a reference, but they answer different requests.
+- `replicate` builds or clones screens to be pixel-exact to the reference, screen by screen, with a full measure → slice → spec → plan → batches workflow. Use it when the reference *is* the target UI.
+- `enhance looks` takes the app's **current** pages and lifts their border style, boldness, font-size scale, radii, spacing/density, and overall look toward a reference's style — without rebuilding the pages to match its exact layout. Use it when the reference is inspiration for restyling what already exists, or when there's no reference at all (built-in presets are the fallback library, not the primary path).
 
 ## 0. Triage (no mode given)
 1. **Scan** (read-only, a few seconds):
@@ -28,31 +32,35 @@ All three modes keep features, content, routes, data, and behavior unchanged, an
 4. **Ask** which mode(s) to run, using the question tool if available.
 
 ## 1. `looks`
-Presets live in `<SKILL_DIR>/assets/presets/`. Read its `README.md`, then `SPEC.md` (tokens, components, patterns, verification values). The rendered references are `gallery/build/<page>--<preset>.html`.
 
 1. **Context:** read `docs/pixelproof/context.md` (brand, users, Always/Never rules). If it's missing, offer `/pixelproof teach` first.
-2. **Pick a preset:**
-   - Choose the 1–2 presets that fit the product and users (e.g. `lumen` for dense ops tools, `linen` for lifestyle or consumer brands, `nocturne` for marketing).
-   - Render the user's own key page in each candidate: build a slice of that page with its real content using the preset classes, following `<SKILL_DIR>/references/slice.md`.
-   - Apply the user's brand color to the accent tokens, keeping AA contrast.
+2. **Intake — two images ("enhance this [current], make it look like this [reference]"):**
+   - The **first** image (or the one described as "this"/"current"/a screenshot of the running app) is the current state. The **second** (or the one described as "like this"/a Dribbble shot/design) is the style reference. If the wording doesn't make the roles clear, ask which is which before doing anything.
+   - **If the scope is clear from the prompt** (e.g. "make the buttons bolder like this", "match this card style"), proceed with just that scope.
+   - **If the scope is ambiguous** (e.g. "enhance this, make it look like this" with nothing else), ask a single question before starting: which of these should move toward the reference — **style** (colors, borders, weight, radii, shadows), **layout** (spacing, density, structure), **content** (copy, data, sections), or **all of it**? Offer the question tool if available, otherwise numbered options. Don't guess an answer that changes content or layout beyond what "looks" work implies.
+3. **Pick a style source:**
+   - **The user gave a reference** (screenshot, Dribbble/Behance shot, Figma export, design.md): this is the primary path. Copy it into `docs/pixelproof/refs/`, then measure it (`<SKILL_DIR>/references/measure.md`) and slice it (`<SKILL_DIR>/references/slice.md`) to get its exact border widths/styles, font-weight and size scale, radii, shadows, spacing rhythm, and layout density as tokens — same rigor as `replicate` Steps 2–3, but you only need enough of the reference to cover the style traits, not every screen. **Mind the scale check in measure.md Step 1** — a missed 2× on a retina/scaled screenshot is the usual cause of a restyle coming out looking "zoomed in" (font sizes, padding, and margin roughly double what they should be).
+   - **No reference:** presets live in `<SKILL_DIR>/assets/presets/` as a library fallback. Read its `README.md`, then `SPEC.md` (tokens, components, patterns, verification values). The rendered references are `gallery/build/<page>--<preset>.html`. Choose the 1–2 presets that fit the product and users (e.g. `lumen` for dense ops tools, `linen` for lifestyle or consumer brands, `nocturne` for marketing).
+   - Either way: render the user's own key page in each candidate, using the style source's classes, following `<SKILL_DIR>/references/slice.md`. Apply the user's brand color to the accent tokens, keeping AA contrast.
 
-   **GATE A:** show the before screenshot and the candidate previews at 1440 and 390. Ask which preset (or "keep my current look, just clean it up"), or Request changes.
-3. **Map:**
-   - For every page in scope, write an element mapping (current element → preset component) into `docs/pixelproof/plan.md`.
-   - Elements with no preset component get a derived component from the same tokens. Show it in an additions preview (see `replicate` Step 4).
+   **GATE A:** show the before screenshot and the candidate previews at 1440 and 390. Ask which style source to use (or "keep my current look, just clean it up"), or Request changes.
+4. **Map:**
+   - For every page in scope, write an element mapping (current element → style source's component) into `docs/pixelproof/plan.md`. Only map the traits in scope from Step 2 (e.g. style-only means colors/borders/weight/radii/shadows, not spacing or structure).
+   - Elements with no matching component get a derived component from the same tokens. Show it in an additions preview (see `replicate` Step 4).
 
    **GATE B:** show the mapping and the additions. Ask Approve / Request changes / Implement directly.
-4. **Implement:**
-   - Follow `<SKILL_DIR>/references/implement.md`: copy the preset tokens and `components.css` into the project's three-layer theme (primitives → semantic → component) and port the CSS rule by rule.
-   - Keep the preset's class names, or map them 1:1 in the component API.
+5. **Implement:**
+   - Follow `<SKILL_DIR>/references/implement.md`: copy the style source's tokens and component CSS into the project's three-layer theme (primitives → semantic → component) and port the CSS rule by rule. Keep the current pages' routes, data, content, and behavior unchanged — this restyles them, it doesn't rebuild them.
+   - Keep the style source's class names, or map them 1:1 in the component API.
    - Work in batches of 1–3 pages.
-5. **Verify** each batch:
-   - parity against the preset references for shared components (`check_parity.mjs`)
+6. **Verify** each batch:
+   - parity against the style source's references for shared components (`check_parity.mjs`)
    - `render.py --deep --strict` at 1440, 1024, and 390
    - `check_tokens.mjs`
+   - **sanity check:** computed font sizes, padding, and margins land in believable UI ranges (body text 11–20px, control height 28–52px). Anything outside that, front-load-investigate before showing the batch — it's almost always a stale scale from Step 2, not a real design choice.
 
    **GATE C:** show before/after for the batch and the results. Ask Continue / Change / Implement the rest directly.
-6. **Save the system:** write `docs/pixelproof/style-spec.md` for the project with `build_spec.py`, and update `state.json` (`preset`, `brand`). Later commands then treat it as the project's own spec.
+7. **Save the system:** write `docs/pixelproof/style-spec.md` for the project with `build_spec.py`, and update `state.json` (`styleSource`: reference path or preset name, `brand`). Later commands then treat it as the project's own spec.
 
 ## 2. `perf`
 1. **Baseline:**

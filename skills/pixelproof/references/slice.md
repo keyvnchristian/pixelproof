@@ -37,10 +37,10 @@ slices/
 ```
 
 - **Partials:** inside a body file, `<!-- include: partials/sidebar.html -->` inserts a partial. `{{active:orders}}` in the include line sets a variable the partial can use: in the partial, write `{{#active=orders}} is-active{{/active}}` to add a class only on the matching screen.
-- **Assemble:** `python scripts/assemble.py docs/pixelproof/slices` writes `<name>.html` for each screen, with the CSS inlined and the sprite embedded.
+- **Assemble:** `python <SKILL_DIR>/scripts/assemble.py docs/pixelproof/slices` writes `<name>.html` for each screen, with the CSS inlined and the sprite embedded.
 
 ## 2. CSS rules
-- **Starting point:** `assets/templates/shared.starter.css`: reset, `.icon`, focus ring, and a token block to fill in.
+- **Starting point:** `<SKILL_DIR>/assets/templates/shared.starter.css`: reset, `.icon`, focus ring, and a token block to fill in.
 - **Tokens:** all colors and repeated values on `:root`, with semantic names (`--primary`, `--text-2`, `--border`, `--bg-subtle`…). Components reference tokens for colors. Sizes and spacing can be literal px inside the slice; Step 5 turns them into tokens.
 - **Selectors:** one class per component and part, BEM-light (`.order`, `.order-head`, `.order-row`). Variants are modifier classes (`.btn-primary`, `.is-active`). No IDs, no deep descendant chains, no `!important`.
 - **Surfaces:** no shadows or gradients unless measured in the reference. If they exist, make them tokens and list exactly where they're allowed.
@@ -90,9 +90,9 @@ Label derived rules "derived" in the spec. `render.py` must report no page-level
 
 ## 7. The measure → fix loop
 Repeat until the differences are only intentional ones (placeholders, brand swaps):
-1. `python scripts/assemble.py <slices>`
-2. `python scripts/render.py <slices>/<screen>.html --widths 1440,1024,390 --out <previews>`: fix every reported issue.
-3. `python scripts/compare.py refs/<ref>.png previews/<screen>-1440.png --ref-box <app area> --out previews/<screen>-compare.png`
+1. `python <SKILL_DIR>/scripts/assemble.py <slices>`
+2. `python <SKILL_DIR>/scripts/render.py <slices>/<screen>.html --widths 1440,1024,390 --out <previews>`: fix every reported issue.
+3. `python <SKILL_DIR>/scripts/compare.py refs/<ref>.png previews/<screen>-1440.png --ref-box <app area> --out previews/<screen>-compare.png`
 4. Look at the compare image. Check element positions, row heights, paddings, border presence, icon size and weight, text size and weight, and column alignment.
 5. Re-measure anything that looks off (`measure.py boxes` / `lines`), fix the CSS, and repeat.
 

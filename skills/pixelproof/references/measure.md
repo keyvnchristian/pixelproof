@@ -21,7 +21,7 @@ Screenshots are rarely 1:1 with CSS pixels:
 - **Figma exports:** 1×, 2×, or 3×.
 
 ```bash
-python scripts/measure.py scale refs/list.png --frame 102,207,1945,1536
+python <SKILL_DIR>/scripts/measure.py scale refs/list.png --frame 102,207,1945,1536
 ```
 - `--frame` is the app area: inside the browser chrome, or the full image if there is none.
 - The script prints candidate scales for common viewport widths (1280, 1366, 1440, 1536, 1600, 1920) and for 1×/2×/3×.
@@ -32,10 +32,15 @@ python scripts/measure.py scale refs/list.png --frame 102,207,1945,1536
 - Common control heights are 32–44px.
 - A 1px hairline border should come out at 1–1.5 image px × scale.
 
+**Hard gate — reject an implausible scale before measuring anything else.** After picking a candidate scale, convert the body text and one control height to CSS px:
+- Body font size outside **11–20px** or control height outside **28–52px** → the scale is wrong by a factor (usually 2×, sometimes 3×). Halve or double it and recheck against the same elements before continuing.
+- This is the single most common cause of a "zoomed in" implementation: a retina (2×) or 3× screenshot measured at 1× makes every font size, padding, and margin come out roughly double or triple what it should be, and that error then propagates untouched through the slice, tokens, and implementation.
+- Log the accepted scale and the two sanity values in `measurements.md` so the check is auditable.
+
 Measure 2–3 elements at each candidate scale:
 
 ```bash
-python scripts/measure.py boxes refs/list.png --box 530,500,1900,560 --scale 1.28
+python <SKILL_DIR>/scripts/measure.py boxes refs/list.png --box 530,500,1900,560 --scale 1.28
 ```
 
 Record the chosen scale and the reasoning in `measurements.md`. For a `design.md` or Figma file with explicit values, scale = 1 and those values win.
@@ -43,8 +48,8 @@ Record the chosen scale and the reasoning in `measurements.md`. For a `design.md
 ## 2. Colors
 
 ```bash
-python scripts/measure.py palette refs/list.png --box 2025,152,2230,195 --top 4
-python scripts/measure.py sample refs/list.png 1480,1150 560,90
+python <SKILL_DIR>/scripts/measure.py palette refs/list.png --box 2025,152,2230,195 --top 4
+python <SKILL_DIR>/scripts/measure.py sample refs/list.png 1480,1150 560,90
 ```
 
 - **Background regions:** use the dominant color.
@@ -55,7 +60,7 @@ python scripts/measure.py sample refs/list.png 1480,1150 560,90
 ## 3. Borders and dividers
 
 ```bash
-python scripts/measure.py lines refs/list.png --box 530,800,1900,1400 --min-len 200
+python <SKILL_DIR>/scripts/measure.py lines refs/list.png --box 530,800,1900,1400 --min-len 200
 ```
 
 This finds long 1px (or thicker) horizontal and vertical lines and their colors. Use it to:
@@ -66,7 +71,7 @@ This finds long 1px (or thicker) horizontal and vertical lines and their colors.
 ## 4. Spacing and sizes
 
 ```bash
-python scripts/measure.py boxes refs/list.png --box 530,490,1900,560 --scale 1.28 --bg auto
+python <SKILL_DIR>/scripts/measure.py boxes refs/list.png --box 530,490,1900,560 --scale 1.28 --bg auto
 ```
 
 - **How it works:** it segments the region into content bands (rows) and, inside each band, content blocks (columns). It prints image px and CSS px.
@@ -91,7 +96,7 @@ Measure:
 - corner radius
 - whether icons are filled or outlined
 
-Default: draw every icon into `sprite.svg` in one consistent style (24×24 viewBox, `fill: none`, `stroke: currentColor`, measured stroke width, round caps and joins). Start from `assets/icons/starter-sprite.svg` and add what's missing. Only use an icon library if the reference clearly *is* that library (same shapes) and the user agrees. Never mix sets.
+Default: draw every icon into `sprite.svg` in one consistent style (24×24 viewBox, `fill: none`, `stroke: currentColor`, measured stroke width, round caps and joins). Start from `<SKILL_DIR>/assets/icons/starter-sprite.svg` and add what's missing. Only use an icon library if the reference clearly *is* that library (same shapes) and the user agrees. Never mix sets.
 
 ## 7. Snapping rules
 - **Spacing:** round to whole px. Prefer even numbers unless several elements consistently measure odd (e.g. 9px nav spacing).

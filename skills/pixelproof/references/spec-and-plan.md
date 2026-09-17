@@ -10,7 +10,7 @@
 ## 1. Token inventory
 
 ```bash
-python scripts/tokens.py docs/pixelproof/slices/shared.css --out docs/pixelproof/tokens.json --md
+python <SKILL_DIR>/scripts/tokens.py docs/pixelproof/slices/shared.css --out docs/pixelproof/tokens.json --md
 ```
 
 The output lists every distinct value, with its count and the rules that use it:
@@ -53,8 +53,8 @@ Other rules:
 ## 3. Generating style-spec.md
 
 ```bash
-python scripts/build_spec.py docs/pixelproof \
-  --template <skill>/assets/templates/style-spec.template.md \
+python <SKILL_DIR>/scripts/build_spec.py docs/pixelproof \
+  --template <SKILL_DIR>/assets/templates/style-spec.template.md \
   --out docs/pixelproof/style-spec.md
 ```
 
@@ -78,7 +78,7 @@ python scripts/build_spec.py docs/pixelproof \
 Keep the spec self-sufficient. Someone with only `style-spec.md` + the slices should be able to rebuild the UI exactly.
 
 ## 4. Writing plan.md
-Start from `assets/templates/plan.template.md`. Required sections:
+Start from `<SKILL_DIR>/assets/templates/plan.template.md`. Required sections:
 1. **Stack wiring:** where tokens and global CSS live, font loading, the sprite/`Icon` component, and the Tailwind mapping.
 2. **File structure:** every file to create or change, and the legacy files to delete.
 3. **Component API:** name, props (variants/sizes), the classes each prop produces, the component tokens, and the spec section.

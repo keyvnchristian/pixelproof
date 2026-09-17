@@ -1,6 +1,6 @@
 ---
 name: pixelproof
-description: Pixel-exact UI from design references, plus design audits. Use this skill whenever the user shares a screenshot, Dribbble/Behance shot, Figma export, or design.md and wants it built, matched, cloned, restyled, or "made exactly like this"; wants to rebrand an app's colors or theme; wants to improve a frontend's looks, performance, or oversized components without a reference; wants to add a page, section, or menu in an existing style; wants to extract a design system from an existing UI; or asks to audit, roast, review, or check the consistency, spacing, icons, responsiveness, or design quality of a frontend. Commands include teach, replicate, enhance, extract, add, theme, audit, roast, compare, verify, responsive, status, and help.
+description: Pixel-exact UI from design references, plus design audits. Use this skill whenever the user shares a screenshot, Dribbble/Behance shot, Figma export, or design.md and wants it built, matched, cloned, restyled, or "made exactly like this"; wants to rebrand an app's colors or theme; wants to improve an existing frontend's borders, boldness, font-size scale, spacing, layout, performance, or oversized components — toward a reference if they have one, or with built-in presets if they don't; wants to add a page, section, or menu in an existing style; wants to extract a design system from an existing UI; or asks to audit, roast, review, or check the consistency, spacing, icons, responsiveness, or design quality of a frontend. Commands include teach, replicate, enhance, extract, add, theme, audit, roast, compare, verify, responsive, status, and help.
 argument-hint: "[teach|replicate|enhance|extract|add|theme|audit|roast|compare|verify|responsive|status|help] [target]"
 ---
 
@@ -18,7 +18,7 @@ The first word of the arguments is the command. The rest is its target: paths, U
 |---|---|---|---|
 | `teach` | `setup`, `init`, `context` | `<SKILL_DIR>/commands/teach.md` | Interview once and save project context (product, users, brand, rules) to `docs/pixelproof/context.md` |
 | `replicate` | `build`, `clone` | `<SKILL_DIR>/commands/replicate.md` | References → measured slice → spec → exact implementation, with approval gates |
-| `enhance` | `improve`, `polish`, `refactor`, `speed` | `<SKILL_DIR>/commands/enhance.md` | No reference: improve looks (built-in presets), performance, or god components, with previews and proof |
+| `enhance` | `improve`, `polish`, `refactor`, `speed` | `<SKILL_DIR>/commands/enhance.md` | Improve an existing app's look (toward a reference if given, else built-in presets), performance, or god components, with previews and proof |
 | `extract` | `reverse`, `spec` | `<SKILL_DIR>/commands/extract.md` | Reverse-engineer the current UI into slices, tokens, and a style spec |
 | `add` | `new`, `extend` | `<SKILL_DIR>/commands/add.md` | Add a page, section, menu, or feature in the established style |
 | `theme` | `rebrand`, `recolor` | `<SKILL_DIR>/commands/theme.md` | Change brand color, font, radius, or density globally through tokens |
@@ -31,7 +31,7 @@ The first word of the arguments is the command. The rest is its target: paths, U
 | `help` | `?` | `<SKILL_DIR>/commands/help.md` | Show the commands |
 
 Routing rules:
-- **No arguments:** if the user attached or mentioned design references, run `replicate`. If they want the UI improved but have no references, run `enhance`. If they asked for a review or critique, run `audit` (or `roast` if they asked for a roast). If `docs/pixelproof/context.md` doesn't exist and the request is open-ended, suggest `teach` first. Otherwise run `help`.
+- **No arguments:** if the user attached or mentioned design references and wants those exact screens built/cloned, run `replicate`. If they want their **existing** app's look lifted — toward a reference, or with no reference at all — run `enhance` (mode `looks`); a reference here means "restyle toward this", not "clone this screen by screen". If they asked for a review or critique, run `audit` (or `roast` if they asked for a roast). If `docs/pixelproof/context.md` doesn't exist and the request is open-ended, suggest `teach` first. Otherwise run `help`.
 - **Unknown first word:** if it looks like a file path, URL, or image, treat it as `replicate <args>`. Otherwise show `help` and ask which command they meant.
 - **Loaded automatically** (the user wrote a request instead of a slash command): pick the command whose description matches the request, and state it in one line, e.g. "Running pixelproof audit on this repo."
 - Read only the command file you need. Each command file says which `references/` guides to load.

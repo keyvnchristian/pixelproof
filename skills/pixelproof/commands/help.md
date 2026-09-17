@@ -10,7 +10,7 @@ Setup
 
 Build
   /pixelproof replicate <refs…>   build exactly from screenshots / design.md (default)
-  /pixelproof enhance [looks|perf|structure]   no reference? improve looks, speed, or god components
+  /pixelproof enhance [looks|perf|structure]   improve existing app's looks (toward a reference, or presets), speed, or god components
   /pixelproof extract [--url]     turn the current UI into a spec + tokens
   /pixelproof add "<what>"        add a page/section/menu in the same style
   /pixelproof theme "<change>"    rebrand: color, font, radius, density

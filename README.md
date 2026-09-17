@@ -62,7 +62,7 @@ Run these inside Claude Code. The plugin install uses the prefix `/pixelproof:pi
 | Command | What it does | Edits code? |
 |---|---|---|
 | `/pixelproof teach` | One-time interview: product, users, brand, rules → `docs/pixelproof/context.md` (run this first) | No |
-| `/pixelproof enhance [looks\|perf\|structure]` | No reference? Restyle with a built-in preset, speed up pages, or split god components, with before/after proof | After your approval |
+| `/pixelproof enhance [looks\|perf\|structure]` | Lift your existing app's borders, boldness, font sizes, and layout toward a reference (or a built-in preset if you have none), speed up pages, or split god components, with before/after proof | After your approval |
 | `/pixelproof replicate <refs…>` | Build exactly from screenshots, Dribbble shots, or a `design.md` (the default) | After your approval |
 | `/pixelproof extract [--url]` | Reverse-engineer your current UI into slices, tokens, and a style spec | No |
 | `/pixelproof add "<what>"` | Add a page, section, or menu in the established style | After your approval |

@@ -29,7 +29,7 @@ Create `docs/pixelproof/parity.config.json` once and extend it per batch:
 ```
 
 ```bash
-node <skill>/scripts/check_parity.mjs docs/pixelproof/parity.config.json --out docs/pixelproof/previews/parity
+node <SKILL_DIR>/scripts/check_parity.mjs docs/pixelproof/parity.config.json --out docs/pixelproof/previews/parity
 ```
 
 - **What it does:** opens both pages, compares the first element matching each selector, prints a diff table, and saves screenshots of both pages. It exits with code 1 if there are differences.
@@ -41,7 +41,7 @@ node <skill>/scripts/check_parity.mjs docs/pixelproof/parity.config.json --out d
 ## 2. Token lint
 
 ```bash
-node <skill>/scripts/check_tokens.mjs src --theme src/styles/theme --allow "*.svg"
+node <SKILL_DIR>/scripts/check_tokens.mjs src --theme src/styles/theme --allow "*.svg"
 ```
 
 - **What it flags:** hex, `rgb()`/`rgba()`, and `px` literals in `.css/.scss/.ts/.tsx/.js/.jsx/.vue/.svelte` outside the theme folder.
@@ -51,7 +51,7 @@ node <skill>/scripts/check_tokens.mjs src --theme src/styles/theme --allow "*.sv
 ## 3. Other checks (run as part of `render.py` against the app URL)
 
 ```bash
-python <skill>/scripts/render.py http://localhost:3000/orders --widths 1440,1024,390 --out docs/pixelproof/previews/app
+python <SKILL_DIR>/scripts/render.py http://localhost:3000/orders --widths 1440,1024,390 --out docs/pixelproof/previews/app
 ```
 
 - no horizontal page overflow at 1024 and 390
