@@ -135,5 +135,8 @@ Each covers a dashboard, settings, forms, auth (login, OTP, reset, register), fi
 ## Third-party references
 Pixelproof replicates layout and visual language. For third-party shots, it replaces brand names, logos, photos, illustrations, and copy with your own content or neutral placeholders.
 
+## Changelog
+See [CHANGELOG.md](CHANGELOG.md).
+
 ## License
 MIT
